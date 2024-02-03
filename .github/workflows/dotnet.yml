@@ -15,14 +15,42 @@ jobs:
 
     steps:
     - uses: actions/checkout@v4
-    
+
     - name: Setup .NET
       uses: actions/setup-dotnet@v4
       with:
-        dotnet-version: 6.0.x
-        
-    - name: Restore dependencies
-      run: dotnet restore PageLayout/PageLayout.sln
+         dotnet-version: 6.0.x
+         include-prerelease: true 
+    
+    - name: Build with dotnet
+      run: dotnet build PageLayout/PageLayout/PageLayout.csproj --configuration Release
+
+    - name: dotnet publish
+      run: dotnet publish PageLayout/PageLayout/PageLayout.csproj -c Release -o ${{enc.DOTNET_ROOT}}/myapp
+
+    - name: Upload artifact for deployment job
+      uses: actions/upload-artifact@v3
+      with:
+        name: .net-app
+        path: ${{env.DOTNET_ROOT}}/myapp
       
-    - name: Build
-      run: dotnet build PageLayout/PageLayout/PageLayout.csproj --no-restore
+  test:
+    runs-on: windows-latest
+    needs: build
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Setup .NET Core
+        uses: actions/setup-dotnet@v4
+        with:
+            dotnet-version: 6.0.x
+            include-prerelease: true
+
+      - name: Restore dependencies
+        run: dotnet restore PageLayout/PageLayout.sln
+
+      - name: Run tests
+        run: dotnet test PageLayout/PageLayout.Tests/PageLayout.Tests.csproj --configuration Release
+        
