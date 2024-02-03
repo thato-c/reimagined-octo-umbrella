@@ -26,7 +26,7 @@ jobs:
       run: dotnet build PageLayout/PageLayout/PageLayout.csproj --configuration Release
 
     - name: dotnet publish
-      run: dotnet publish PageLayout/PageLayout/PageLayout.csproj -c Release -o $pagelayoutapp
+      run: dotnet publish PageLayout/PageLayout/PageLayout.csproj -c Release -o ${{env.DOTNET_ROOT}}/PageLayout
 
     - name: Upload artifact for deployment job
       uses: actions/upload-artifact@v3
