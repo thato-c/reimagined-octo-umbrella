@@ -1,7 +1,6 @@
 * {
     font-size: small;
     text-decoration: none;
-    color: white;
 }
 
 .navbar {
@@ -10,7 +9,7 @@
     left: 0;
     top: 0;
     padding-top: 0;
-    flex-wrap:unset;
+    flex-wrap: unset;
     width: 97%;
     height: 3rem;
     background-color: #1D4E89;
@@ -29,9 +28,7 @@
 }
 
 .menu {
-    margin: 0;
     background-color: #1D4E89;
-    color: white;
     text-align: center;
     position: fixed;
     right: 0;
@@ -40,18 +37,15 @@
     height: 100%;
     display: flex;
     flex-direction: column;
-    /*justify-content: space-between;*/
 }
 
 .menu a{
-    margin: 10px 0;
+    margin: 6px 0;
 }
 
 /* Main Content */
 .main-content {
-    color: black;
-    margin-top: 3%;
-    margin-right: 3%;
+    margin: 4%;
 }
 
 /* CSS for footer */
@@ -59,12 +53,12 @@
     margin: 0;
     height: 3rem;
     background-color: #1D4E89;
-    color: white;
     text-align: center;
     position: fixed;
     left: 0;
     bottom: 0;
     width: 97%;
+    color: white;
 }
 
     .footer p {
@@ -73,3 +67,39 @@
     }
 
 
+.material-symbols-outlined{
+    color: white;
+}
+
+/* Home Page */
+
+.cards-columns-container{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.card-column{
+    display: flex;
+    margin-right: 15px;
+}
+
+.card {
+    margin: 20px;
+    padding: 2px 2px;
+    text-align: center;
+    width: 200px;
+    height: 150px;
+}
+
+.application{
+    display: flex;
+}
+
+.description{
+    width: 450px;
+    height: 30px;
+    text-align: center;
+    margin: 5px;
+    padding: 5px;
+    margin-left: 10px;
+}
