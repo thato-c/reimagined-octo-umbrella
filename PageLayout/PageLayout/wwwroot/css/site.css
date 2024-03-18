@@ -50,7 +50,7 @@ a{
 
 /* Main Content */
 .main-content {
-    margin: 4% 4% 4% 2%;
+    margin: 4% 5% 4% 2%;
 }
 
 /* CSS for footer */
@@ -89,7 +89,7 @@ a{
     margin-right: 15px;
 }
 
-.card {
+.cards {
     margin: 20px;
     padding: 2px 2px;
     text-align: center;
@@ -115,4 +115,8 @@ a{
     min-height: 10px;
     text-align: center;
     margin: 5px;
+}
+
+.table-primary {
+    background-color: #1D4E89;
 }
